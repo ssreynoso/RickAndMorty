@@ -1,0 +1,57 @@
+:root {
+    --white        : #fff;
+    --black        : #000;
+    --primary_color: #0C5A64;
+    --padding      : 1.6rem;
+}
+
+/* Le pongo texto a los botones navegación*/
+.nav__item1::after, .nav__item2::after {
+    margin-left: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.nav__item1::after {
+    content: 'Home';
+}
+
+.nav__item2::after {
+    content: 'Documentación';
+}
+
+/* Ajusto la sección de presentación */
+
+.presentation {
+    height          : 30vw;
+    max-height      : 25rem;
+}
+
+.presentation__title {
+    font-size       : 2.4rem;
+    font-weight     : 700;
+    line-height     : 3rem;
+}
+
+/* Ajusto el grid */
+
+.mainContent {
+    grid-template-columns   : repeat(3, 1fr);
+    grid-auto-rows          : 17rem;
+}
+
+/* Ajusto el tamaño de fuente de la descripción del personaje */
+
+.card {
+    font-size       : 1.7vw;
+}
+
+.description__left > h3 {
+    font-size       : 2vw;
+}
+
+.card__details {
+    font-size       : 1.3vw;
+}
+
+/* Cambio las fuentes y el margin de los elementos del footer.*/

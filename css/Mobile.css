@@ -1,0 +1,271 @@
+:root {
+    --white        : #fff;
+    --black        : #000;
+    --primary_color: #0C5A64;
+    --gap          : 1.6rem;
+    --padding      : 1.6rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin          : 0;
+    padding         : 0;
+}
+
+html {
+    font-size       : 62.5%;
+    font-family     : Roboto, sans-serif;
+}
+
+body{
+    background-color: var(--black);
+    margin-bottom   : 4.4rem;
+}
+
+a {
+    color           : white;
+}
+
+header {
+    width           : 100vw;
+    height          : 4.4rem;
+    padding         : 0 var(--padding);
+    position        : fixed;
+    top             : 0;
+    z-index         : 1;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    /* font-size       : 1.2rem; */
+    font-weight     : 500;
+    background-color: var(--primary_color);
+    color           : white;
+}
+
+.nav {
+    width           : 50%;
+    height          : 100%;
+}
+
+.nav > ul {
+    width           : 100%;
+    height          : inherit;
+    list-style      : none;
+    display         : flex;
+    font-size       : 2rem;
+    justify-content : flex-start;
+    align-items     : center;
+}
+
+.nav > ul > li {
+    height          : inherit;
+    padding         : 1rem;
+    margin-right    : 1rem;
+    display         : flex;
+    align-items     : center;
+    justify-content : flex-start;
+    transition: all .5s ease;
+}
+
+.nav > ul > li:hover {
+    cursor          : pointer;
+    background-color: black;
+}
+
+header > h2 {
+    width           : 50%;
+    text-align      : right;
+}
+
+.presentation {
+    width               : 100%;
+    height              : 14rem;
+    margin-top          : 4.4rem;
+    background-image    : url('https://i.blogs.es/17012b/rick-morty-4x07-1939353/1366_2000.jpeg');
+    background-position : center;
+    background-size     : cover;
+    position            : relative;
+}
+
+.presentation > div { /* Capa de degradado transparente */
+    width           : 100%;
+    height          : 100%;
+    background      : linear-gradient(180deg, rgba(0, 0, 0, 0.70) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.presentation__title {
+    margin          : 0;
+    position        : relative;
+    width           : 60%;
+    top             : var(--gap);
+    left            : var(--padding);
+    color           : var(--white);
+    font-size       : 1.8rem;
+    font-weight     : 700;
+    line-height     : 2.2rem;
+    display         : block;
+}
+
+/* Estilos card */
+
+main{
+    padding         : 2rem var(--padding);
+    width           : 100%;
+    /* margin-bottom: 4.4rem; */
+}
+
+.mainContent {
+    width                   : 100%;
+    height                  : 100%;
+    display                 : grid;
+    grid-template-columns   : repeat(2, 1fr);
+    grid-auto-rows          : 14rem;
+    row-gap                 : var(--gap);
+    column-gap              : var(--gap);
+}
+
+.card {
+    background-color: var(--primary_color);
+    border-radius   : .5rem;
+    transition      : all .5s ease;
+    overflow        : hidden;
+    font-size       : 2.4vw;
+}
+
+.card__img {
+    width           : 100%;
+    object-fit      : cover;
+    transition      : all .5s ease;
+    height          : 65%;
+}
+
+.card__details {
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.40);
+    color           : var(--white);
+    font-size       : 1.7vw;
+    border          : 1px solid black;
+    display         : none;
+}
+
+.card__details > p {
+    padding: 0 .5rem;
+    text-align: center;
+}
+
+.description {
+    width           : 100%;
+    height          : 35%;
+    padding         : .5rem;
+    background-color: var(--primary_color);
+    color           : var(--white);
+    display         : flex;
+    transition      : all .5s ease;
+}
+
+.description p,
+.description h3 {
+    overflow        : hidden;
+    text-overflow   : ellipsis;
+}
+
+.description__left {
+    padding-right   : .5rem;
+    width           : 70%;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : flex-end;
+    overflow        : hidden;
+    
+}
+
+.description__left > h3 {
+    font-size       : 2.9vw;
+    height          : 40%;
+    margin-bottom   : .5rem;
+}
+
+.description__right {
+    width           : 40%;
+    padding-left    : .5rem;
+    display         : flex;
+    align-items     : flex-end;
+    justify-content : flex-end;
+}
+
+
+/* Estilos card:hover */
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .card__img {
+    height: 30%;
+}
+
+.card:hover .description {
+    height: 55%;
+}
+
+.card:hover .card__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card:hover .description__left{
+    align-items: flex-start;
+    justify-content: flex-start;    
+}
+
+.card:hover .description__right {
+    align-items: flex-start;
+}
+
+.card:hover p,
+.card:hover h3 {
+    overflow: visible;
+    overflow-wrap: anywhere;
+    height: auto;
+}
+
+/* Estilos footer */
+
+footer {
+    width           : 100%;
+    height          : 4.4rem;
+    color           : var(--white);
+    background-color: var(--black);
+    padding         : 1.3rem var(--padding);
+    position        : fixed;
+    bottom          : 0;
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    font-size       : 1.2rem;
+    font-weight     : 500;
+    user-select     : none;
+}
+
+.redesSociales {
+    width           : 30%;
+    display         : flex;
+    align-items     : center;
+    justify-content : flex-end;
+}
+
+.redesSociales > ul {
+    list-style      : none;
+    display         : flex;
+}
+
+.redesSociales__item {
+    font-size       : 2rem;
+    margin-left     : 1.4rem;
+}
+
+.redesSociales__item:hover > a {
+    transition      : color .2s ease;
+    color           : var(--primary_color);
+}

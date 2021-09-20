@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uso de la API de Rick and Morty para practicar.">
+    <meta name="keywords" content="API, Async, Asynchronous, Rick and Morty">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/Mobile.css">
+    <link rel="stylesheet" href="css/480px.css" media="screen and (min-width: 480px)">
+    <link rel="stylesheet" href="css/768px.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="css/1440px.css" media="screen and (min-width: 1440px)">
+    <!-- Scripts -->
+    <!-- Script utilizado para algunos temas de responsive design -->
+    <script src="./scripts/responsive.js" defer></script>
+    <!-- Script que consume API de Rick and Morty y crea las cards mostradas -->
+    <script src="./scripts/main.js" type="module"></script>
+
+    <!-- Google Fonts nos pide estos tags para poder usar las fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Activo el uso de íconos de fontawesome -->
+    <script src="https://kit.fontawesome.com/cd3e742115.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    <header>
+        <nav class="nav">
+            <ul>
+                <li class="nav__item1">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="nav__item2">
+                    <a href="#">
+                        <i class="fas fa-book-open"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <h2 class="header__text">Rick and Morty API</h2>
+    </header>
+    <section class="presentation"> <!-- A esta sección le tengo que poner de fondo una foto de rick and morty-->
+        <div>
+            <h1 class="presentation__title">Esta página es utilizada para la práctica del consumo de APIs.</h1>
+        </div>
+    </section>
+    <main>
+        <section id="mainContent" class="mainContent"></section>
+    </main>
+    <footer id="footer">
+        <span>Hecho por Santiago Reynoso Dunjo</span>
+        <div class="redesSociales">
+            <ul>
+                <li class="redesSociales__item">
+                    <a href="https://www.instagram.com/ssreynoso/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="redesSociales__item">
+                    <a href="https://www.linkedin.com/in/santiago-reynoso-dunjo-31aba31bb/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

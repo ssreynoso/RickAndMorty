@@ -1,0 +1,36 @@
+:root {
+    --white        : #fff;
+    --black        : #000;
+    --primary_color: #0C5A64;
+    --gap          : 1.6rem;
+    --padding      : 1.6rem;
+}
+
+/* Ajusto la sección de presentación */
+
+.presentation {
+    max-height      : 30rem;
+}
+
+.presentation__title {
+    font-size       : 2.5vw;
+    line-height     : 3.5vw;
+}
+
+.mainContent {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.card {
+    font-size: .9vw;
+}
+
+.card__details {
+    font-size: .6vw;
+}
+
+.description__left > h3 {
+    height   : 40%;
+    font-size: 1.1vw;
+}
+
