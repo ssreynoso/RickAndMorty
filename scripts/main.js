@@ -31,7 +31,7 @@ const usingCallbacks = function () {
 //         .catch( error => console.error(error));
 // }
 
-const usingPromises = function () {
+const usingPromisesWithHTTPRequest = function () {
     fetchDataPromise(API)
         .then( data1 => {
             let cantPaginas     = data1.info.pages;
@@ -49,11 +49,53 @@ const usingPromises = function () {
         .catch ( error => console.error(error));
 }
 
-const usingAsyncAwait = async function () {
+const usingPromisesWithFetch = function () {
+ 
+    const arrayPromises = [];
+
+    fetch(API)
+        .then(response => response.json())
+        .then(informacionAPI => {
+            
+            let cantPaginas = informacionAPI.info.pages;     
+
+            for (let i = 1; i <= cantPaginas; i++){
+                let currentPage = `${API}?page=${i}`
+                arrayPromises.push(fetchDataPromise(currentPage));
+            }
+    
+            Promise.all(arrayPromises)
+                .then(paginas => paginas.forEach(pagina => pagina.results.forEach(personaje => createCard(personaje))))
+    
+        })
+}
+
+const usingAsyncAwaitWithHTTPRequest = async function () {
     try{
-        const informacionAPI = await fetchDataPromise(API); //Espero hasta que se complete el request.
+        const informacionAPI = await fetchDataPromise(API); //Esto me devuelve el JSON directamente. 
         const arrayPromises  = [];
         let cantPaginas      = informacionAPI.info.pages;     
+
+        for (let i = 1; i <= cantPaginas; i++){
+            let currentPage = `${API}?page=${i}`
+            arrayPromises.push(fetchDataPromise(currentPage));
+        }
+
+        let paginas = await Promise.all(arrayPromises);
+        
+        paginas.forEach( pagina => pagina.results.forEach( personaje => createCard(personaje) ) );
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+
+const usingAsyncAwaitWithFetch = async function () {
+    try{
+        const fetch_informacionAPI = await fetch(API);                  //Esto me devuelve una promesa.
+        const informacionAPI       = await fetch_informacionAPI.json(); //Esto también.
+        const arrayPromises        = [];
+        let cantPaginas            = informacionAPI.info.pages;     
 
         for (let i = 1; i <= cantPaginas; i++){
             let currentPage = `${API}?page=${i}`
@@ -76,6 +118,10 @@ const usingAsyncAwait = async function () {
 
 // usingCallbacks();
 
-// usingPromises();
+// usingPromisesWithHTTPRequest();
 
-usingAsyncAwait();
+// usingPromisesWithFetch();
+
+usingAsyncAwaitWithHTTPRequest();
+
+// usingAsyncAwaitWithFetch();
